@@ -1,0 +1,23 @@
+{
+  "name": "practicesoftwaretestingwithplaywright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanAWyatt/PracticeSoftwareTestingwithPlaywright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanAWyatt/PracticeSoftwareTestingwithPlaywright/issues"
+  },
+  "homepage": "https://github.com/DanAWyatt/PracticeSoftwareTestingwithPlaywright#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.1",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,16 @@
+# Playwright
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Optional: other Playwright outputs
+*.zip
+*.tgz
+
+# If you use screenshots, videos, or traces
+*.png
+*.webm
+*.zip
+*.trace.zip
