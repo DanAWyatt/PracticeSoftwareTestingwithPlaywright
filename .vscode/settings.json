@@ -1,0 +1,34 @@
+{
+  // Playwright configuration
+  "playwright.configPath": "./playwright.config.ts",
+
+  // Default headless mode for Playwright Test UI
+  "playwright.headless": true,
+
+  // Enable tracing for debugging the VS Code extension (optional, can turn off later)
+  "playwright.trace": "off",
+
+  // TypeScript: always use the version from the workspace
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  // TypeScript: enable strict type checking in VS Code
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // Enable auto-detection of test files in VS Code Testing tab
+  "testing.autoRun": "off",
+  "testing.showInStatusBar": true,
+  "testing.defaultGutterEnabled": true,
+
+  // Optional: automatically format on save
+  "editor.formatOnSave": true,
+
+  // Optional: default terminal for scripts (PowerShell or your preferred shell)
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+  // Optional: recommended extensions for anyone opening the workspace
+  "extensions.recommendations": [
+    "ms-playwright.playwright",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
