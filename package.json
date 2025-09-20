@@ -10,10 +10,9 @@
     "install:playwright": "npx playwright install",
     "setup": "npm install && npx playwright install"
   },
-  "dependencies": {},
   "devDependencies": {
     "@playwright/test": "^1.55.0",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.19.17",
     "typescript": "^5.2.2"
   }
 }
