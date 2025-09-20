@@ -10,15 +10,13 @@ export default defineConfig({
   use: {
     headless: true,
     baseURL: 'https://practicesoftwaretesting.com/',
-    video: 'retain-on-failure', // Moved here
+    video: 'retain-on-failure',
   },
   projects: [
     {
-      name: 'Login Tests',
-      use: {
-        baseURL: 'https://practicesoftwaretesting.com/',
-      },
+      name: 'Login Chromium',
       testDir: './tests/login',
+      use: { browserName: 'chromium' },
     },
     {
       name: 'Chromium Desktop',
@@ -27,7 +25,7 @@ export default defineConfig({
         storageState: 'storageState.json',
         viewport: { width: 1280, height: 720 },
       },
-      testIgnore: './tests/login', // Ignore login tests
+      testIgnore: ['**/tests/login/**'],
     },
     {
       name: 'Chromium Pixel 8',
@@ -36,7 +34,7 @@ export default defineConfig({
         storageState: 'storageState.json',
         ...devices['Pixel 8'],
       },
-      testIgnore: './tests/login', // Ignore login tests
+      testIgnore: ['**/tests/login/**'],
     },
     {
       name: 'WebKit Desktop',
@@ -45,7 +43,7 @@ export default defineConfig({
         storageState: 'storageState.json',
         viewport: { width: 1280, height: 720 },
       },
-      testIgnore: './tests/login', // Ignore login tests
+      testIgnore: ['**/tests/login/**'],
     },
     {
       name: 'WebKit iPhone 14',
@@ -54,8 +52,8 @@ export default defineConfig({
         storageState: 'storageState.json',
         ...devices['iPhone 14'],
       },
-      testIgnore: './tests/login', // Ignore login tests
+      testIgnore: ['**/tests/login/**'],
     },
   ],
-  globalSetup: require.resolve('./globalSetup'),
+  globalSetup: './globalSetup.ts',
 });

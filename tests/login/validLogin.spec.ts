@@ -13,6 +13,7 @@ for (const creds of validCredentials) {
   test(`should login (${creds.name})`, async ({ page, login }) => {
     await login(creds);
     await expect(page.locator('data-test="nav-menu"')).toBeVisible();
+    
     await page.locator('data-test="nav-menu').click();
     await expect(page.locator('data-test="nav-sign-out"')).toBeVisible();   // Verify presence of sign-out option
     await page.locator('data-test="nav-sign-out').click(); // Log out to reset state

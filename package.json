@@ -4,13 +4,16 @@
   "description": "A Playwright test project for a dummy website.",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "install:playwright": "npx playwright install",
+    "setup": "npm install && npx playwright install"
   },
-  "dependencies": {
-    "playwright": "^1.0.0"
-  },
-  "devDependencies": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {},
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^20.6.0",
+    "typescript": "^5.2.2"
+  }
 }
