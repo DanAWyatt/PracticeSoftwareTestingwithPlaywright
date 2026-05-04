@@ -8,9 +8,12 @@ export default defineConfig({
   },
   reporter: 'html',
   use: {
-    headless: true,
+    headless: false,
     baseURL: 'https://practicesoftwaretesting.com/',
     video: 'retain-on-failure',
+    connectOptions: {
+      wsEndpoint: process.env.PLAYWRIGHT_SERVER_WS || 'ws://127.0.0.1:PORT',
+    },
   },
   projects: [
     {

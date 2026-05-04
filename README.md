@@ -12,15 +12,41 @@ This project is a Playwright test suite for a dummy website. It demonstrates how
 ### Installation
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
    cd playwright-test-project
    ```
 
 2. Install the dependencies:
-   ```
+   ```bash
    npm install
    ```
+
+3. Install Playwright browsers and tools:
+   ```bash
+   npx playwright install
+   ```
+
+### Playwright MCP Server
+
+This repo is configured to use a Playwright MCP server for browser execution. The Playwright config connects to the MCP server instead of launching local browsers directly.
+
+- Ensure your MCP server is running and reachable.
+- Set the server endpoint using environment variables if needed, for example:
+  ```powershell
+  $env:PLAYWRIGHT_SERVER_WS = 'ws://127.0.0.1:PORT'
+  npx playwright test
+  ```
+
+### Playwright Agents (Planner / Generator / Healer)
+
+To initialize the Playwright agents for Copilot, run:
+
+```bash
+npx playwright init-agents --loop copilot --prompts
+```
+
+This will create the repository agent files and enable the planner, generator, and healer workflows for VS Code Copilot.
 
 ### Running Tests
 
