@@ -1,12 +1,8 @@
 import { APIRequestContext, expect, Page, TestInfo } from '@playwright/test';
+import { requireSuiteExecution } from '../../../shared/execution-gates';
 
 export function requireSecurityExecution(testInfo: TestInfo): void {
-  if (process.env.SECURITY_ENABLE !== 'true') {
-    testInfo.skip(
-      true,
-      'Set SECURITY_ENABLE=true to run security scaffold tests intentionally.'
-    );
-  }
+  requireSuiteExecution(testInfo, 'security');
 }
 
 export async function expectRestrictedAdminAccess(page: Page): Promise<void> {

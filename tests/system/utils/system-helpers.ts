@@ -1,12 +1,8 @@
 import { expect, Locator, Page, TestInfo } from '@playwright/test';
+import { requireSuiteExecution } from '../../shared/execution-gates';
 
 export function requireSystemExecution(testInfo: TestInfo): void {
-  if (process.env.SYSTEM_ENABLE !== 'true') {
-    testInfo.skip(
-      true,
-      'Set SYSTEM_ENABLE=true to run system scaffold tests intentionally.'
-    );
-  }
+  requireSuiteExecution(testInfo, 'system');
 }
 
 export async function firstVisibleLocator(

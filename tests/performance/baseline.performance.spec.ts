@@ -7,17 +7,15 @@ import {
   formatSummary,
   summarizeSamples,
 } from './utils/metrics';
+import { requireSuiteExecution } from '../shared/execution-gates';
 
 const apiCatalogUrl = 'https://api.practicesoftwaretesting.com/products?limit=9';
 
 test.describe('Performance Baseline', () => {
   test.describe.configure({ timeout: 10 * 60 * 1000 });
 
-  test('home page and catalog API baseline', async ({ page, request }) => {
-    test.skip(
-      process.env.PERF_ENABLE !== 'true',
-      'Set PERF_ENABLE=true to run performance scaffold tests intentionally.'
-    );
+  test('home page and catalog API baseline', async ({ page, request }, testInfo) => {
+    requireSuiteExecution(testInfo, 'performance');
 
     const profile = workloadProfiles.baseline;
     const homePageSamples: PerfSample[] = [];

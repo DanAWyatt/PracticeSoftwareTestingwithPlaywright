@@ -1,12 +1,8 @@
 import { expect, Page, TestInfo } from '@playwright/test';
+import { requireSuiteExecution } from '../../shared/execution-gates';
 
 export function requireAcceptanceExecution(testInfo: TestInfo): void {
-  if (process.env.ACCEPTANCE_ENABLE !== 'true') {
-    testInfo.skip(
-      true,
-      'Set ACCEPTANCE_ENABLE=true to run acceptance scaffold tests intentionally.'
-    );
-  }
+  requireSuiteExecution(testInfo, 'acceptance');
 }
 
 export async function verifyPrivacyPolicyAccessible(page: Page): Promise<void> {
