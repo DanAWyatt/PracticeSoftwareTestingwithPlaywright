@@ -22,6 +22,11 @@ export default defineConfig({
       use: { browserName: 'chromium' },
     },
     {
+      name: 'Security Chromium',
+      testDir: './tests/login/security',
+      use: { browserName: 'chromium' },
+    },
+    {
       name: 'Chromium Desktop',
       use: {
         browserName: 'chromium',
