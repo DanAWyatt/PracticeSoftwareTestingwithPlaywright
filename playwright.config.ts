@@ -22,8 +22,33 @@ export default defineConfig({
       use: { browserName: 'chromium' },
     },
     {
+      name: 'Acceptance Chromium',
+      testDir: './tests/acceptance',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'Accessibility Chromium',
+      testDir: './tests/accessibility',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'Integration Chromium',
+      testDir: './tests/integration',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'Performance Chromium',
+      testDir: './tests/performance',
+      use: { browserName: 'chromium' },
+    },
+    {
       name: 'Security Chromium',
       testDir: './tests/login/security',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'System Chromium',
+      testDir: './tests/system',
       use: { browserName: 'chromium' },
     },
     {
@@ -33,7 +58,14 @@ export default defineConfig({
         storageState: 'storageState.json',
         viewport: { width: 1280, height: 720 },
       },
-      testIgnore: ['**/tests/login/**'],
+      testIgnore: [
+        '**/tests/login/**',
+        '**/tests/acceptance/**',
+        '**/tests/accessibility/**',
+        '**/tests/integration/**',
+        '**/tests/performance/**',
+        '**/tests/system/**',
+      ],
     },
     {
       name: 'Chromium Pixel 8',
@@ -42,7 +74,14 @@ export default defineConfig({
         storageState: 'storageState.json',
         ...devices['Pixel 8'],
       },
-      testIgnore: ['**/tests/login/**'],
+      testIgnore: [
+        '**/tests/login/**',
+        '**/tests/acceptance/**',
+        '**/tests/accessibility/**',
+        '**/tests/integration/**',
+        '**/tests/performance/**',
+        '**/tests/system/**',
+      ],
     },
     {
       name: 'WebKit Desktop',
@@ -51,7 +90,14 @@ export default defineConfig({
         storageState: 'storageState.json',
         viewport: { width: 1280, height: 720 },
       },
-      testIgnore: ['**/tests/login/**'],
+      testIgnore: [
+        '**/tests/login/**',
+        '**/tests/acceptance/**',
+        '**/tests/accessibility/**',
+        '**/tests/integration/**',
+        '**/tests/performance/**',
+        '**/tests/system/**',
+      ],
     },
     {
       name: 'WebKit iPhone 14',
@@ -60,7 +106,14 @@ export default defineConfig({
         storageState: 'storageState.json',
         ...devices['iPhone 14'],
       },
-      testIgnore: ['**/tests/login/**'],
+      testIgnore: [
+        '**/tests/login/**',
+        '**/tests/acceptance/**',
+        '**/tests/accessibility/**',
+        '**/tests/integration/**',
+        '**/tests/performance/**',
+        '**/tests/system/**',
+      ],
     },
   ],
   globalSetup: './globalSetup.ts',
